@@ -1,0 +1,15 @@
+.shoe-card {
+    .image {
+        @apply h-50;
+
+        img {
+            @apply object-cover;
+        }
+    }
+
+    .details {
+        .name {
+            @apply font-semibold;
+        }
+    }
+}

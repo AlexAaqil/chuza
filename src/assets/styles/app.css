@@ -63,20 +63,18 @@
     --border: #393939;
 }
 
-*,
+/* *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    outline: 1px solid rgb(253, 198, 198);
+} */
 
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    @apply bg-background text-foreground text-[16px] font-[font-accent] py-4 px-[4%];
+    @apply bg-background text-foreground text-[16px] font-[font-accent];
     -webkit-font-smoothing: antialiased;
     font-family: var(--font-body);
 
@@ -107,4 +105,30 @@ body {
     p {
         line-height: 1.5;
     }
+
+    .container-fluid {
+        @apply py-4 px-[4%];
+    }
+
+    .image {
+        img {
+            @apply h-full w-full object-cover;
+        }
+    }
+
+    .whatsapp_customer_service_btn {
+        @apply fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg w-14 h-14 flex items-center justify-center z-50;
+        animation: pulse-whatsapp 2s infinite;
+
+        svg {
+            @apply w-8 h-8 fill-white;
+        }
+    }
+}
+
+@import "./globals";
+
+@keyframes pulse-whatsapp {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }

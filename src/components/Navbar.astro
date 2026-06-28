@@ -1,0 +1,29 @@
+<nav>
+    <div class="container">
+        <div class="branding">
+            <a href="/">
+                Albachuza
+            </a>
+        </div>
+
+        <div class="nav_links">
+            <a href="/">Shop</a>
+            <a href="/">About</a>
+            <a href="/">Contact</a>
+            <a href="/">Blog</a>
+        </div>
+
+        <div class="burger_menu md:hidden ml-4" @click="open = !open">
+            <span :class="open ? 'rotate-45 translate-y-1.5' : ''"></span>
+            <span :class="open ? 'opacity-0' : ''"></span>
+            <span :class="open ? '-rotate-45 -translate-y-1.5' : ''"></span>
+        </div>
+    </div>
+
+    <!-- Mobile dropdown links -->
+    <div class="nav_links md:hidden" :class="{ 'block' : open, 'hidden' : !open }">
+        <div class="main_links flex flex-col space-y-2 mt-4 px-4">
+            <a href="{{ Route::has($link['href']) ? route($link['href']) : '#' }}" >Hello</a>
+        </div>
+    </div>
+</nav>
